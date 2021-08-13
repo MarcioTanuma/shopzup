@@ -1,10 +1,11 @@
 package br.com.zup.market.shopzup.dtos;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CompraDTO {
-    private ClienteDTO cliente;
-    private List<ProdutoDTO> produtos;
+    private ClienteDTO cliente = new ClienteDTO();
+    private List<ProdutoDTO> produtos = new ArrayList<>();
 
     public CompraDTO() {
     }
