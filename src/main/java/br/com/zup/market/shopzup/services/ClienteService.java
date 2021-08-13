@@ -12,8 +12,17 @@ public class ClienteService {
 
     // Método para cadastrar Clientes
     public ClienteDTO cadastrarClientes(ClienteDTO cliente){
+        validaCpfDuplicado(cliente);
         listaDeClientes.add(cliente);
         return cliente;
+    }
+    // Método para validar CPF dublicado
+    public void validaCpfDuplicado(ClienteDTO clienteDTO){
+        for (ClienteDTO item:listaDeClientes) {
+            if (item.getCpf().equals(clienteDTO.getCpf())){
+                throw new RuntimeException("CPF Duplicado!");
+            }
+        }
     }
     // Método para buscar clientes por CPF
     public ClienteDTO buscarClientesPorCpf(String cpf){

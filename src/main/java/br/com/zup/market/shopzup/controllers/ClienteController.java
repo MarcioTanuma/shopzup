@@ -12,9 +12,16 @@ public class ClienteController {
     @Autowired
     private ClienteService clienteService;
 
+    // Método para cadastrar Cliente
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ClienteDTO cadastrarCliente(@RequestBody ClienteDTO cliente) {
         return clienteService.cadastrarClientes(cliente);
     }
+    // Método para buscar Cliente por CPF
+    @GetMapping("{cpf}")
+    public ClienteDTO buscarClientePorCpf(@PathVariable String cpf) {
+        return clienteService.buscarClientesPorCpf(cpf);
+    }
+
 }
