@@ -1,8 +1,16 @@
 package br.com.zup.market.shopzup.dtos;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
 public class ClienteDTO {
+    @NotBlank(message = "Preenchimento do campo Nome é obrigatório!")
     private String nome;
+    @Size(min = 11, max = 11, message = "Campo CPF obrigatório com 11 posições!")
     private String cpf;
+    @Email(message = "e-mail cadastrado NÃO é válido!")
+    @NotBlank(message = "Preenchimento do campo e-mail é obrigatório!")
     private String email;
 
     public ClienteDTO() {
