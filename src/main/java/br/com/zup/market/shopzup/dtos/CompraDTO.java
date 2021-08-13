@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CompraDTO {
-    private ClienteDTO cliente = new ClienteDTO();
-    private List<ProdutoDTO> produtos = new ArrayList<>();
+    private ClienteDTO cliente;
+    private List<ProdutoDTO> produtos;
 
     public CompraDTO() {
     }

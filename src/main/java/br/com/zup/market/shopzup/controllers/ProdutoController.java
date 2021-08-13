@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -17,7 +18,7 @@ public class ProdutoController {
     // Mètodo para cadastrar produto
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ProdutoDTO cadastrarProduto(@RequestBody ProdutoDTO produto){
+    public ProdutoDTO cadastrarProduto(@RequestBody @Valid ProdutoDTO produto){
         return produtoService.cadastrarProduto(produto);
     }
     // Método para buscar todos os produtos cadastrados

@@ -29,4 +29,14 @@ public class ProdutoService {
     public List<ProdutoDTO> mostrarListaDeProdutos(){
             return listaDeProdutos;
     }
+    // Método para buscar produto por nome
+    public ProdutoDTO buscarProdutoPorNome(String nome) {
+        for (ProdutoDTO produto:listaDeProdutos) {
+            if (produto.getNome().equals(nome)) {
+                return produto;
+                }
+
+        }
+        throw new RuntimeException("Produto não encontrado!");
+    }
 }

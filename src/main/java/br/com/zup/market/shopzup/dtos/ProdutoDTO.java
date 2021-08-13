@@ -1,15 +1,13 @@
 package br.com.zup.market.shopzup.dtos;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 public class ProdutoDTO {
     @NotBlank(message = "Preenchimento do campo Nome do Produto é obrigatório!")
     private String nome;
-    @NotBlank(message = "Preenchimento do Valor do Produto é obrigatório!")
+    @DecimalMin("0.00")
     private double preco;
-    @NotBlank(message = "Preenchimento da Quantidade de Produto(s) é obrigatório!")
+    @Min(0)
     private int quantidade;
 
     public ProdutoDTO() {
